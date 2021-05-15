@@ -1,0 +1,101 @@
+[
+  {
+    "_id": "",
+    "itemId": "af123",
+    "itemName": "Artery Forceps (Spencer wells)straight/curved",
+    "category": "General Surgical",
+    "subCategory": "Artery forceps",
+    "itemPrice": "320",
+    "priceSpecs": "each",
+    "size": "6\"",
+    "itemDesc": "(Spencer wells)straight /curved",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "atf123",
+    "itemName": "Allis Tissue Forceps 3x4 teeth fine",
+    "category": "General Surgical",
+    "subCategory": "Tissue forceps",
+    "itemPrice": "320",
+    "priceSpecs": "each",
+    "size": "6\"",
+    "itemDesc": "3x4 teeth fine",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "nh123",
+    "itemName": "Needle Holder Straight/curved",
+    "category": "General Surgical",
+    "subCategory": "Needle Holder",
+    "itemPrice": "400",
+    "priceSpecs": "each",
+    "size": "4\", 5\"",
+    "itemDesc": "",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "hcgyn123",
+    "itemName": "Hysterectomy Clamp",
+    "category": "Gynaecological Instruments",
+    "itemPrice": "1500",
+    "priceSpecs": "each",
+    "size": "8.75\"",
+    "itemDesc": "(A traumatic Jaw 2x3 golden handle) straight/curve",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "uro123",
+    "itemName": "Herrick Kidney Pedicle Clamp",
+    "category": "Urological surgery",
+    "itemPrice": "2250",
+    "priceSpecs": "each",
+    "size": "10.5\"",
+    "itemDesc": "(A traumatic jaw 1x2serration)",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "card123",
+    "itemName": "Vascular Clamp (Buldog)",
+    "category": "Cardiovascular surgery",
+    "itemPrice": "550",
+    "priceSpecs": "each",
+    "size": "3\", 4\"",
+    "itemDesc": "straight/curve",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "card1234",
+    "itemName": "Vascular Clamp (Debekey)",
+    "category": "Cardiovascular surgery",
+    "itemPrice": "2850",
+    "priceSpecs": "each",
+    "size": "5\", 6\"",
+    "itemDesc": "Fine",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  },
+  {
+    "_id": "",
+    "itemId": "card234",
+    "itemName": "Doyns Periosteal clevator right/left",
+    "category": "Cardiovascular surgery",
+    "itemPrice": "2250",
+    "priceSpecs": "each",
+    "size": "7\"",
+    "itemDesc": "",
+    "imageUrl": "https://www.alimed.com/_resources/cache/images/product/98FCP47-1_1000x1000-pad.jpg",
+    "priceGiven": "true"
+  }
+]
