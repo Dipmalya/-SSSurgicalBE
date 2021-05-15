@@ -1,0 +1,37 @@
+{
+  "name": "sssurgicalbe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev node src/index.js",
+    "lint": "eslint *"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dipmalya/-SSSurgicalBE.git"
+  },
+  "author": "Dipmalya Sen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dipmalya/-SSSurgicalBE/issues"
+  },
+  "homepage": "https://github.com/Dipmalya/-SSSurgicalBE#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1",
+    "uniqid": "^5.0.3"
+  }
+}
