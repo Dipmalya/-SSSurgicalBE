@@ -8,6 +8,7 @@ const jwt = require("jsonwebtoken");
 const salt = bcrypt.genSaltSync(10);
 const User = require("../models/user.model");
 const jwtMWare = require("../webtoken/middleware");
+const mailer = require("../utils/mailService");
 
 const formUserId = name => {
   let nameInitials = name.match(/\b\w/g) || [];
@@ -108,5 +109,26 @@ router.post("/register", (req, res, next) => {
       }
     });
 });
+
+router.post("/send/email", (req, res, next) => {
+  const {
+    name, mobile, query
+  } = req.body;
+  const { transporter, mailOptions, constructMail } = mailer;
+  mailOptions.text = constructMail(name, mobile, query);
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) {
+      res.status(401).json({
+        err,
+        message: "Unable to send mail",
+        success: false
+      })
+    } else {
+      res.status(200).json({
+        success: true
+      })
+    }
+  })
+})
 
 module.exports = router;
