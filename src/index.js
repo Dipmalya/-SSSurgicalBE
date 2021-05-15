@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = require("./app");
 const dbConfig = require("./db.config");
 
-mongoose.connect(dbConfig, { useNewUrlParser: true });
+mongoose.connect(dbConfig, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on("connected", () => {
   console.log("Connected to DB..");
 });
