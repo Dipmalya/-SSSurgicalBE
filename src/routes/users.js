@@ -3,12 +3,10 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const uniqid = require("uniqid");
-const jwt = require("jsonwebtoken");
 
 const salt = bcrypt.genSaltSync(10);
 const User = require("../models/user.model");
-const jwtMWare = require("../webtoken/middleware");
-const mailer = require("../utils/mailService");
+const mailer = require("../mailService");
 
 const formUserId = name => {
   let nameInitials = name.match(/\b\w/g) || [];
@@ -40,14 +38,10 @@ router.post("/login", (req, res, next) => {
     .exec()
     .then(user => {
       if (bcrypt.compareSync(password, user.password)) {
-        const token = jwt.sign({ email }, jwtMWare.secret, {
-          expiresIn: "24h"
-        });
         const userDoc = user._doc;
         delete userDoc.password;
         res.status(200).json({
           userDoc,
-          token,
           success: true
         });
       } else {
@@ -111,11 +105,8 @@ router.post("/register", (req, res, next) => {
 });
 
 router.post("/send/email", (req, res, next) => {
-  const {
-    name, mobile, query
-  } = req.body;
   const { transporter, mailOptions, constructMail } = mailer;
-  mailOptions.text = constructMail(name, mobile, query);
+  mailOptions.html = constructMail(req.body);
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
       res.status(401).json({

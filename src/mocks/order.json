@@ -1,0 +1,24 @@
+[
+    {
+        "orderId": "uniqid.time",
+        "item": [
+            {
+                "itemId": "id",
+                "quantity": "1"
+            },
+            {
+                "itemId": "id",
+                "quantity": "2"
+            }
+        ],
+        "buyerName": "Abcd",
+        "address": "asdadsdasdasdasd",
+        "pinCode": "712101",
+        "mobile": "9830098300",
+        "email": "abc@def.com",
+        "orderDate": "22052021",
+        "isDelivered": true,
+        "deliveryDate": "27052021",
+        "isAccepted": true
+    }
+]

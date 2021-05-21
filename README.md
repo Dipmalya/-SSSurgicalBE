@@ -7,4 +7,4 @@ NodeJS Back end service:
 - order route
 
 Steps to RUN-
-$ PASSWORD=_password_ node src/index
+$ PASSWORD=_password_ MAILPWD=_password_ node src/index
