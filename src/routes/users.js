@@ -7,6 +7,7 @@ const uniqid = require("uniqid");
 const salt = bcrypt.genSaltSync(10);
 const User = require("../models/user.model");
 const mailer = require("../mailService");
+const { CUSTOMER_QUERY_MAIL } = require("../../constants");
 
 const formUserId = name => {
   let nameInitials = name.match(/\b\w/g) || [];
@@ -106,7 +107,7 @@ router.post("/register", (req, res, next) => {
 
 router.post("/send/email", (req, res, next) => {
   const { transporter, mailOptions, constructMail } = mailer;
-  mailOptions.html = constructMail(req.body);
+  mailOptions.html = constructMail(CUSTOMER_QUERY_MAIL, req.body);
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
       res.status(401).json({

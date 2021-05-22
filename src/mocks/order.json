@@ -4,11 +4,15 @@
         "item": [
             {
                 "itemId": "id",
+                "itemName": "abcd",
+                "itemPrice": "320",
                 "quantity": "1"
             },
             {
                 "itemId": "id",
-                "quantity": "2"
+                "itemName": "abcd",
+                "itemPrice": "320",
+                "quantity": "1"
             }
         ],
         "buyerName": "Abcd",
