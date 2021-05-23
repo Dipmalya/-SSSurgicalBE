@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
   _id: mongoose.SchemaTypes.ObjectId,
   itemId: String,
   itemName: String,
@@ -16,4 +16,4 @@ const userSchema = mongoose.Schema({
   priceGiven: Boolean
 });
 
-module.exports = mongoose.model("products", userSchema, "product-data");
+module.exports = mongoose.model("products", productSchema, "product-data");

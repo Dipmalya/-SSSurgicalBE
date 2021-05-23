@@ -7,6 +7,7 @@ const cors = require("cors");
 const userRoute = require("./routes/users");
 const productRoute = require("./routes/products");
 const adminRoute = require("./routes/admin");
+const orderRoute = require("./routes/orders");
 
 app.use(morgan("dev"));
 app.use(cors());
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 app.use("/user", userRoute);
 app.use("/product", productRoute);
 app.use("/admin", adminRoute);
+app.use("/order", orderRoute);
 
 app.get('/*', function(req, res, next){ 
   res.setHeader('Last-Modified', (new Date()).toUTCString());
