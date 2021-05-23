@@ -46,7 +46,7 @@ router.post("/login", (req, res, next) => {
           success: true
         });
       } else {
-        res.status(201).json({
+        res.status(500).json({
           message: "Username or Password is invalid",
           success: false
         });
@@ -97,7 +97,7 @@ router.post("/register", (req, res, next) => {
             });
           });
       } else {
-        res.status(201).json({
+        res.status(500).json({
           messgae: "User already exists",
           success: false
         });
