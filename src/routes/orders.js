@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const uniqid = require("uniqid");
 
 const Order = require("../models/order.model");
+const mailer = require("../mailService");
+const { ORDER_CUSTOMER, ORDER_SUBJECT } = require("../../constants");
 
 router.get("/", (req, res, next) => {
   Order.find({})
@@ -33,7 +35,7 @@ router.put("/isAccepted/:orderId/:status", (req, res, next) => {
     .then(() => {
       res.status(200).json({
         message: "Order status updated successfully",
-        success: true
+        success: true,
       });
     })
     .catch((err) => {
@@ -48,12 +50,15 @@ router.put("/isAccepted/:orderId/:status", (req, res, next) => {
 router.put("/orderdDelivered/:orderId", (req, res, next) => {
   const orderId = req.params.orderId;
 
-  Order.findOneAndUpdate({ orderId }, { isDelivered: true, deliveryDate: moment(new Date()).format("DDMMYYYY") })
+  Order.findOneAndUpdate(
+    { orderId },
+    { isDelivered: true, deliveryDate: moment(new Date()).format("DDMMYYYY") }
+  )
     .exec()
     .then(() => {
       res.status(200).json({
         message: "Order ready to deliver.",
-        success: true
+        success: true,
       });
     })
     .catch((err) => {
@@ -67,7 +72,6 @@ router.put("/orderdDelivered/:orderId", (req, res, next) => {
 
 router.post("/placeOrder", (req, res, next) => {
   const order = req.body;
-
   const newOrder = new Order({
     _id: new mongoose.Types.ObjectId(),
     orderId: uniqid.time(),
@@ -80,12 +84,19 @@ router.post("/placeOrder", (req, res, next) => {
     isDelivered: false,
     deliveryDate: "",
     isAccepted: false,
-    items: order.items
+    items: order.items,
   });
 
   newOrder
     .save()
     .then((item) => {
+      const { transporter, mailOptions, constructMail } = mailer;
+      mailOptions.html = constructMail(ORDER_CUSTOMER, order);
+      mailOptions.to = order.email;
+      mailOptions.subject = ORDER_SUBJECT;
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) console.error(err)
+      });
       res.status(200).json({
         message: "Order added successfully",
         success: true,
@@ -100,6 +111,5 @@ router.post("/placeOrder", (req, res, next) => {
       });
     });
 });
-
 
 module.exports = router;
